@@ -1,0 +1,13 @@
+# Application properties với thông tin nhạy cảm
+application-local.properties
+
+# CSV data files
+data/*.csv
+
+# Logs
+logs/
+*.log
+
+# Database
+*.db
+*.sqlite

@@ -1,0 +1,31 @@
+# fastapi
+# uvicorn
+# pandas
+# numpy
+# scikit-learn
+# joblib
+# sentence-transformers
+# psycopg2-binary
+
+
+# Web framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+
+# Data processing
+pandas==2.1.4
+numpy==1.26.3
+
+# Machine Learning
+scikit-learn==1.4.0
+joblib==1.3.2
+
+# PyTorch CPU-only 
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.1.2+cpu
+
+# Sentence transformers 
+sentence-transformers==2.3.1
+
+# Database
+psycopg2-binary==2.9.9

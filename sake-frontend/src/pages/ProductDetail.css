@@ -1,0 +1,330 @@
+.product-detail-page {
+    padding: 3rem 0;
+    min-height: 100vh;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-primary-light);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    transition: all var(--transition-base);
+}
+
+.back-link:hover {
+    color: var(--color-primary);
+    transform: translateX(-4px);
+}
+
+.product-detail {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    background: var(--color-bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.product-image-section {
+    position: relative;
+}
+
+.product-image-wrapper {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.product-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform var(--transition-slow);
+}
+
+.product-image-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+.rank-badge-large {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: var(--gradient-primary);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+    min-width: 100px;
+}
+
+.rank-label {
+    display: block;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.25rem;
+}
+
+.rank-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: white;
+    line-height: 1;
+}
+
+.product-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.product-header {
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(139, 92, 246, 0.2);
+}
+
+.product-title {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+}
+
+.product-subtitle {
+    font-size: 1.5rem;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+.product-brand-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: var(--radius-md);
+    font-size: 1.125rem;
+}
+
+.brand-label {
+    color: var(--color-text-muted);
+    font-weight: 600;
+}
+
+.brand-name {
+    color: var(--color-text-primary);
+    font-weight: 700;
+}
+
+.brand-intl {
+    color: var(--color-text-secondary);
+}
+
+.score-section {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1rem;
+}
+
+.score-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--color-bg-tertiary);
+    border: 2px solid rgba(139, 92, 246, 0.2);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+}
+
+.score-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.main-score {
+    background: var(--gradient-card);
+    border-color: var(--color-primary);
+}
+
+.score-icon {
+    font-size: 3rem;
+    filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5));
+}
+
+.score-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.score-value {
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.score-label {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.flavor-scores h3,
+.flavor-tags-section h3,
+.similar-brands-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-primary);
+}
+
+.flavor-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.flavor-bar {
+    display: grid;
+    grid-template-columns: 60px 1fr 60px;
+    align-items: center;
+    gap: 1rem;
+}
+
+.flavor-label {
+    font-weight: 700;
+    color: var(--color-primary-light);
+    font-size: 1rem;
+}
+
+.bar-container {
+    height: 12px;
+    background: var(--color-bg-tertiary);
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+}
+
+.bar-fill {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 999px;
+    transition: width var(--transition-slow);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+.flavor-value {
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-align: right;
+}
+
+.flavor-tags,
+.similar-brands {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.flavor-tag,
+.similar-brand {
+    padding: 0.625rem 1.25rem;
+    background: rgba(236, 72, 153, 0.2);
+    border: 2px solid rgba(236, 72, 153, 0.3);
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    transition: all var(--transition-base);
+}
+
+.flavor-tag:hover,
+.similar-brand:hover {
+    background: rgba(236, 72, 153, 0.3);
+    border-color: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+.similar-brand {
+    background: rgba(6, 182, 212, 0.2);
+    border-color: rgba(6, 182, 212, 0.3);
+}
+
+.similar-brand:hover {
+    background: rgba(6, 182, 212, 0.3);
+    border-color: var(--color-accent);
+}
+
+@media (max-width: 1024px) {
+    .product-detail {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .product-title {
+        font-size: 2rem;
+    }
+
+    .product-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .score-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-detail-page {
+        padding: 2rem 0;
+    }
+
+    .product-detail {
+        padding: 1.5rem;
+    }
+
+    .rank-badge-large {
+        top: 1rem;
+        right: 1rem;
+        padding: 1rem;
+        min-width: 80px;
+    }
+
+    .rank-value {
+        font-size: 2rem;
+    }
+
+    .product-title {
+        font-size: 1.75rem;
+    }
+
+    .score-icon {
+        font-size: 2rem;
+    }
+
+    .score-value {
+        font-size: 2rem;
+    }
+
+    .flavor-bar {
+        grid-template-columns: 50px 1fr 50px;
+        gap: 0.75rem;
+    }
+}

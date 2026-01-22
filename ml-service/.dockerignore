@@ -1,0 +1,25 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+venv/
+.env
+.venv
+
+# Git
+.git/
+.gitignore
+
+# Docs & tests
+*.md
+test_*.py
+quick_test.py
+
+# ML artifacts (nếu lớn)
+*.csv
+*.pkl
+*.joblib
+data/
+models/

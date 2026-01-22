@@ -1,0 +1,26 @@
+services:
+  # PostgreSQL Database
+  - type: pserv
+    name: wine-db
+    env: docker
+    plan: free
+    databases:
+      - name: testdb
+        user: postgres
+
+  # Spring Boot Web Service
+  - type: web
+    name: wine-backend
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: PORT
+        value: 8080
+      - key: DATABASE_URL
+        fromDatabase:
+          name: wine-db
+          property: connectionString

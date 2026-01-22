@@ -74,9 +74,7 @@ Allow users to search for products by explicitly specifying taste preferences.
 **Method**  
 User input is converted into a flavor preference vector. Similarity between the user vector and each product vector is computed using **Cosine Similarity**:
 
-$$
-\text{cosine\_similarity}(A, B) = \frac{A \cdot B}{||A|| \times ||B||}
-$$
+Cosine similarity(A, B) = (A · B) / (||A|| × ||B||)
 
 Products are ranked by descending similarity score.
 
@@ -93,23 +91,25 @@ A **content-based K-Nearest Neighbors (KNN)** approach is used. Each product is 
 
 ---
 
-## Recommendation Formula (recommend_by_id)
+#### Recommendation Formula (recommend_by_id)
 
 Each candidate product is scored using a weighted sum of popularity similarity, flavor similarity, and quality score.
 
-### 1. Popularity Similarity
+##### 1. Popularity Similarity
 
 Popularity similarity is computed using a Gaussian similarity based on check-in counts:
 
-$$
-S_{\text{popularity}} = \exp\left( - \frac{(\text{max\_checkin} - \text{checkin})^2}{2\sigma^2} \right)
-$$
+S_popularity = exp( - (c_max − c)² / (2σ²) )
+
+where:
+- c is the product check-in count
+- c_max is the maximum check-in count in the dataset
+
 
 This favors products with popularity close to the reference level.
 
----
 
-### 2. Flavor Similarity
+##### 2. Flavor Similarity
 
 Each flavor dimension is compared to the reference product using a Gaussian filter:
 
@@ -125,23 +125,20 @@ $$
 
 Flavor similarity is strongly weighted to emphasize taste matching.
 
----
 
-### 3. Quality Score Contribution
+##### 3. Quality Score Contribution
 
 The product's overall rating (score) is added as a minor adjustment factor.
 
----
 
-### Final Scoring Formula
+##### 4. Final Scoring Formula
 
 $$
 \text{Final Score} = S_{\text{popularity}} + 7 \times \sum_{i=1}^{6} S_{\text{flavor}_i} + 0.5 \times \text{score}
 $$
 
----
 
-### Ranking Rules
+##### 5. Ranking Rules
 
 1. Products are ranked in descending order of the final score  
 2. Duplicate products (by name) are removed  
@@ -155,7 +152,7 @@ $$
 **Purpose**  
 Allow users to describe desired products using natural language.
 
-**Text Representation**
+** 1. Text Representation**
 
 Each product is converted into a textual description:
 
@@ -167,7 +164,7 @@ This transforms structured attributes into unstructured text suitable for semant
 
 ---
 
-## Semantic Model
+#### 2. Semantic Model
 
 - **Model:** Sentence-BERT  
 - **Variant:** `paraphrase-multilingual-MiniLM-L12-v2`  
@@ -184,7 +181,7 @@ $$
 
 ---
 
-## Semantic Similarity
+##### 3. Semantic Similarity
 
 $$
 \text{sim}(q, i) = \frac{v_q \cdot v_i}{||v_q|| \cdot ||v_i||}
